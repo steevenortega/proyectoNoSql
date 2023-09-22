@@ -30,7 +30,11 @@ const validateUser = async (email, password) => {
   }
 
 }
+const insertCreateuser = async (user) => {
+  return await User.create(user)
+}
 
 module.exports = {
-  validateUser
+  validateUser,
+  insertCreateuser
 }

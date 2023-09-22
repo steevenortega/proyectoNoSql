@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 const userModel = require('./models/User')
 const TaskRoutes = require('./routes/TaskRoutes')
+const CreateuserRoutes = require('./routes/CreateuserRoutes')
 const PORT = 3000
 
 const SECRET_KEY ='HOLA MUNDO'
@@ -46,6 +47,7 @@ server.use('/api/v1/auth', (req, res) => {
   }
   
   server.use('/api/v1/tasks', validateToken, TaskRoutes)
+  server.use('/api/v1/createuser', validateToken, CreateuserRoutes)
 
 const mongooseConnect = async () => {
     try{
